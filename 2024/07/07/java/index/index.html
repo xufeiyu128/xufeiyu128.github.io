@@ -16,16 +16,16 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java Base">
+    <meta name="description" content="Java Base枚举1.自定义实现枚举2.enum关键字实现 自定义类实现枚举在定义名称是全部大写不需要修改,只读 数据   会用static和final添加在前面进行底层优化删去set方法 enum用enum取代class 123456789101112	enum colors&#123;	YELLO(&quot;小黄&quot;,19),GREEN(&quot;小绿&quot;,18),RE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java">
 <meta property="og:url" content="http://example.com/2024/07/07/java/index/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java Base">
+<meta property="og:description" content="Java Base枚举1.自定义实现枚举2.enum关键字实现 自定义类实现枚举在定义名称是全部大写不需要修改,只读 数据   会用static和final添加在前面进行底层优化删去set方法 enum用enum取代class 123456789101112	enum colors&#123;	YELLO(&quot;小黄&quot;,19),GREEN(&quot;小绿&quot;,18),RE">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/java.png">
 <meta property="article:published_time" content="2024-07-07T08:57:10.000Z">
-<meta property="article:modified_time" content="2024-07-07T09:08:09.231Z">
+<meta property="article:modified_time" content="2024-07-14T18:47:22.168Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/java.png">
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 字
+          1.8k 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          1 分钟
+          16 分钟
         
       </span>
     
@@ -274,7 +274,208 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Java-Base"><a href="#Java-Base" class="headerlink" title="Java Base"></a>Java Base</h2>
+                <h2 id="Java-Base"><a href="#Java-Base" class="headerlink" title="Java Base"></a>Java Base</h2><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>1.自定义实现枚举<br>2.enum关键字实现</p>
+<h4 id="自定义类实现枚举"><a href="#自定义类实现枚举" class="headerlink" title="自定义类实现枚举"></a>自定义类实现枚举</h4><p>在定义名称是全部大写<br>不需要修改,只读 数据   会用static和final添加在前面进行底层优化<br>删去set方法</p>
+<h3 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h3><p>用enum取代class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">	<span class="hljs-keyword">enum</span> <span class="hljs-title class_">colors</span>&#123;<br>	YELLO(<span class="hljs-string">&quot;小黄&quot;</span>,<span class="hljs-number">19</span>),GREEN(<span class="hljs-string">&quot;小绿&quot;</span>,<span class="hljs-number">18</span>),RED();<br>	<span class="hljs-keyword">private</span> String name;<br>	<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br>	<span class="hljs-keyword">private</span> <span class="hljs-title function_">color</span><span class="hljs-params">(String name,<span class="hljs-type">int</span> age)</span>&#123;<br>	<span class="hljs-built_in">this</span>.name=name;<br>	<span class="hljs-built_in">this</span>.age=age;<br>	toString()&#123;<br>	<br>	&#125;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>1.使用enum已经隐式继承了java.lang.Enum类<br>public final class PlayerType extends Enum  是final继承<br>    *<em>所以enum 类不能继承其他类，亦不能被其它类继承</em><br><code>注:*java是单继承机制*</code></p>
+<p>2.但是enum类还可以实现接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">game</span>&#123;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">playing</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-keyword">enum</span> <span class="hljs-title class_">CS</span> implement game&#123;<br><span class="hljs-meta">@override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">playing</span> <span class="hljs-params">()</span>&#123;<br>System.out.println(<span class="hljs-string">&quot;原神启动!&quot;</span>);<br><br>&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li></li>
+</ul>
+<h3 id="Enum-类中的常用方法"><a href="#Enum-类中的常用方法" class="headerlink" title="Enum 类中的常用方法"></a><code>Enum</code> 类中的常用方法</h3><p><em>方法是指YELLO.ordinal()形式</em></p>
+<ul>
+<li><code>valueOf</code>：将字符串转换成枚举对象。要求字符串必须是已有的常量名，否则报异常。</li>
+<li><code>values</code>：返回一个数组 <code>Example[]</code>，其中包含定义的所有枚举对象</li>
+<li><code>getDeclaringClass</code>：得到枚举常量所属的 <code>class</code></li>
+<li><code>name</code>：得到当前枚举常量的名称。建议优先用 <code>toString</code></li>
+<li><code>ordinal</code>：输出该枚举对象的次序&#x2F;编号（从 0 开始编号。如上例 <code>BLUE.ordinal = 1</code>）</li>
+<li><code>compareTo</code>：比较两个枚举常量的编号（调用常量编号 减去 传入常量编号）</li>
+<li><code>clone</code>：枚举类不能 <code>clone</code>，所以，这是一个只会抛出异常的方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//增强for循环          (color为谁便一个变量,第一个变量类型,最后是变量名称)</span><br><span class="hljs-keyword">for</span>( colors  color :values)&#123;<br>System.out.println(<span class="hljs-string">&quot;颜色=&quot;</span>+color);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><ol>
+<li><h2 id="三个基本的-Annotation：-Override：限定某个方法，是-重写-父类方法。该注解只能用于方法。如果你写了该注解，编译器会替你校验，看看是不是真的-重写-了父类方法。-Deprecated：用于表示某个程序元素（类、方法等）已经过时-SuppressWarnings-：抑制编辑器警告"><a href="#三个基本的-Annotation：-Override：限定某个方法，是-重写-父类方法。该注解只能用于方法。如果你写了该注解，编译器会替你校验，看看是不是真的-重写-了父类方法。-Deprecated：用于表示某个程序元素（类、方法等）已经过时-SuppressWarnings-：抑制编辑器警告" class="headerlink" title="三个基本的 @Annotation： - @Override：限定某个方法，是 重写 父类方法。该注解只能用于方法。如果你写了该注解，编译器会替你校验，看看是不是真的 重写 了父类方法。 - @Deprecated：用于表示某个程序元素（类、方法等）已经过时 - @SuppressWarnings()：抑制编辑器警告"></a>三个基本的 <code>@Annotation</code>：<br> - <code>@Override</code>：限定某个方法，是 重写 父类方法。该注解只能用于方法。如果你写了该注解，编译器会替你校验，看看是不是真的 重写 了父类方法。<br> - <code>@Deprecated</code>：用于表示某个程序元素（类、方法等）已经过时<br> - <code>@SuppressWarnings()</code>：抑制编辑器警告</h2>语法:  <strong>@Suppresswarnings({“”})</strong></li>
+<li><table>
+<thead>
+<tr>
+<th><strong>关键字</strong></th>
+<th><strong>用途</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>all</td>
+<td>抑制所有警告</td>
+</tr>
+<tr>
+<td>boxing</td>
+<td>抑制与装箱&#x2F;解装箱操作相关的警告</td>
+</tr>
+<tr>
+<td>cast</td>
+<td>抑制与强制转换操作相关的警告</td>
+</tr>
+<tr>
+<td>dep-ann</td>
+<td>抑制与已弃用注释相关的警告</td>
+</tr>
+<tr>
+<td>deprecation</td>
+<td>抑制与弃用有关的警告</td>
+</tr>
+<tr>
+<td>fallthrough</td>
+<td>抑制与 switch 语句中丢失断点相关的警告</td>
+</tr>
+<tr>
+<td>finally</td>
+<td>抑制不返回的 finally 块的相关警告</td>
+</tr>
+<tr>
+<td>hiding</td>
+<td>抑制与隐藏变量的局部变量相关的警告</td>
+</tr>
+<tr>
+<td>incomplete-switch</td>
+<td>抑制与 switch 语句中缺少条目相关的警告（enum）</td>
+</tr>
+<tr>
+<td>nls</td>
+<td>抑制与 非nls 字符串字面值相关的警告</td>
+</tr>
+<tr>
+<td>null</td>
+<td>抑制相对于null分析的警告</td>
+</tr>
+<tr>
+<td>rawtypes</td>
+<td>在类参数上使用泛型时，抑制与非特定类型相关的警告</td>
+</tr>
+<tr>
+<td>restriction</td>
+<td>抑制与不推荐或禁止引用有关的警告</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>抑制与可序列化类缺少serialVersionUID字段相关的警告</td>
+</tr>
+<tr>
+<td>static-access</td>
+<td>抑制与不正确的静态访问有关的警告</td>
+</tr>
+<tr>
+<td>synthetic-access</td>
+<td>抑制与未优化的内部类访问相关的警告</td>
+</tr>
+<tr>
+<td>unchecked</td>
+<td>抑制与未检查的操作相关的警告</td>
+</tr>
+<tr>
+<td>unqualified-field-access</td>
+<td>抑制与字段访问不合格相关的警告</td>
+</tr>
+<tr>
+<td>unused</td>
+<td>抑制与未使用代码相关的警告</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p><code>@SuppressWarnings</code> 的范围与你放置的位置相关。</p>
+<p>基础梳理(17分钟)</p>
+<h2 id="前两章"><a href="#前两章" class="headerlink" title="前两章"></a>前两章</h2><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>类变量可以被其他多个类对象一起共享<br>类方法可以直接用’ . ‘来访问,不用创建对象<br>public static void main{   f1();    }<br>调用public static void f1(){  }<br>静态方法只能调用静态方法(不用创建对象,直接调用)</p>
+<h3 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h3><p>public static void main(String[] args){}<br>jvm调用main方法不需要创建对象 static</p>
+<h2 id="异常-exception"><a href="#异常-exception" class="headerlink" title="异常(exception)"></a>异常(exception)</h2><p>不应该一段小程序导致程序奔溃<br>可能出现的问题使用try-catch异常处理机制来解决<br>用ctrl+alt+t来选中代码<br>在 Java 语言中，将程序执行中发生的不正常情况称为 “异常”（开发过程中的语法错误和逻辑错误不是异常）<br>报错时看exception是哪个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123; <span class="hljs-comment">//可疑代码 //将异常生成对应的异常对象，传递给 catch 块 &#125; </span><br><span class="hljs-keyword">catch</span>(Exception e) &#123; System.out.println(e.Getmessage());   &#125;<br><span class="hljs-keyword">finally</span> &#123; <span class="hljs-comment">//无论是否异常，都执行这些代码 //finally 块可以不写 &#125;</span><br><br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="两种异常"><a href="#两种异常" class="headerlink" title="两种异常"></a>两种异常</h3><ul>
+<li><p>Error（错误）：Java 虚拟机无法解决的严重问题。</p>
+<p>  如：JVM 系统内部错误，资源耗尽等严重情况。Error 是严重错误，程序会崩溃。</p>
+</li>
+<li><p>Exception：其他因编程错误或偶然的外部因素导致的一般性问题，可以使用针对性的代码进行处理。</p>
+<p>  如：空指针访问，试图读取不存在的文件，网络中断等等。</p>
+</li>
+</ul>
+<p>Exception 又分为两大类： </p>
+<p><strong>运行时异常</strong>（程序运行时，发生的异常）编译器不要求强制处置的异常。一般是指编程的逻辑错误，是程序员应该避免其出现的异常。</p>
+<p>java.lang.RuntimeException 类及它的子类都是运行时异常</p>
+<p>运行时异常，可以不做处理。这类异常很普遍，若全处理会对程序的可读性和运行效率产生影响</p>
+<p><strong>编译时异常</strong>（编程时，编译器检查出的异常）编译时异常，是编译器要求必须处置的异常</p>
+<p>![[Pasted image 20240715000618.png]]</p>
+<h3 id="常见的运行时异常"><a href="#常见的运行时异常" class="headerlink" title="常见的运行时异常"></a>常见的运行时异常</h3><blockquote>
+<p>常见的运行时异常（RuntimeException）包括</p>
+<ul>
+<li>NullPointerException：空指针异常</li>
+<li>ArithmeticException：数学运算异常</li>
+<li>ArrayIndexOutOfBoundsException：数组下标越界异常</li>
+<li>ClassCastException：类型转换异常</li>
+<li>NumberFormatException：数学格式异常</li>
+</ul>
+</blockquote>
+<h3 id="常见的编译异常"><a href="#常见的编译异常" class="headerlink" title="常见的编译异常"></a>常见的编译异常</h3><blockquote>
+<p>常见的编译异常：</p>
+<ul>
+<li>SQLException：操作数据库时，查询表可能发生异常</li>
+<li>IOException：操作文件时，发生的异常</li>
+<li>FileNotFoundException：操作一个不存在的文件时，发生的异常</li>
+<li>ClassNotFoundException：加载类，而该类不存在时，发生的异常</li>
+<li>EOFException：操作文件，到文档末尾，发生的异常</li>
+<li>IllegalArguementException：参数异常</li>
+</ul>
+</blockquote>
+<h3 id="throws-异常处理"><a href="#throws-异常处理" class="headerlink" title="throws 异常处理"></a><code>throws</code> 异常处理</h3><blockquote>
+<p>如果一个方法可能生成某种异常，但是并不能确定如何处理这种异常，则此方法应显式地声明抛出异常，表明该方法将不对这些异常进行处理，而由调用者负责处理</p>
+<p>在方法中声明 <code>throws</code> 语句可以声明抛出异常的列表。<code>throws</code> 后面的异常类型可以是方法中产生的异常类型，也可以是它的父类。</p>
+</blockquote>
+<blockquote>
+<p>语法</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">metord</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> FileNontFoundException ,NullPointerException </span>&#123;<br>	...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>使用细节</strong></p>
+</blockquote>
+<ol>
+<li>对于 <strong>编译异常</strong>，程序中必须处理。</li>
+<li>对于 <strong>运行异常</strong>，程序中诺没有处理，默认处理是 <code>throws</code></li>
+<li>子类 重写 父类方法时，子类方法抛出的异常类型必须和父类一致，或者是父类抛出异常类型的子类型。</li>
+<li>如果有 <code>try - catch</code> 就不必 <code>throws</code> 了</li>
+</ol>
+<h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><blockquote>
+<p>当程序中出现了某些 “错误”，但该信息并未在 <code>Throwable</code> 子类中描述处理，这时候可以自己设计异常类，用于描述该错误信息</p>
+</blockquote>
+<ol>
+<li>定义类：自定义异常类名，继承 RuntimeException 或 Exception</li>
+<li>如果继承 Exception，属于 编译异常。</li>
+<li>如果继承 RuntimeException，属于 运行异常。（一般来说，选这个。这样利用了默认处理机制，更方便）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><br>&gt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">Metords</span> &#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method</span><span class="hljs-params">()</span> &#123;<br>       <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>       <span class="hljs-keyword">if</span>(n &gt; <span class="hljs-number">100</span>)&#123;<br>           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomException</span>(<span class="hljs-string">&quot;不能大于100&quot;</span>);<br>       &#125;<br>   &#125;<br>&gt;&#125;<br><br>&gt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">CustomException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> &#123;<br><span class="hljs-keyword">public</span> <span class="hljs-title function_">CustomException</span><span class="hljs-params">(String message)</span> &#123;<br>	<span class="hljs-built_in">super</span>(message);<br>&#125;<br>&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="11-3-1-throw-和-throws"><a href="#11-3-1-throw-和-throws" class="headerlink" title="11.3.1 throw 和 throws"></a>11.3.1 <code>throw</code> 和 <code>throws</code></h3><table>
+<thead>
+<tr>
+<th></th>
+<th>意义</th>
+<th>位置</th>
+<th>后面跟的东西</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>throws</code></td>
+<td>异常处理的一种方式</td>
+<td>方法声明时</td>
+<td>异常类型</td>
+</tr>
+<tr>
+<td><code>throw</code></td>
+<td>手动生成异常对象关键字</td>
+<td>方法体中</td>
+<td>异常对象</td>
+</tr>
+</tbody></table>
+
                 
               </div>
             
@@ -335,6 +536,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/07/12/%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE/markdown/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
