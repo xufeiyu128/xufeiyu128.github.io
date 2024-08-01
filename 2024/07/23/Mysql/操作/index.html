@@ -16,13 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="单行注释 –多行注释 &#x2F;**&#x2F;SQL四种语言数据库(database xx language)DDL.DML.DQL.DCL定义,操作,查询,控制 &#x3D;&#x3D;DML（Data Manipulation Language）语句: 数据操纵语言，主要是对数据进行增加、删除、修改操作。常用的语句关键字有 INSERT、UPDATE、DELETE 等。&#x3D;&amp;#x3">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2024/07/12/%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE/markdown/index.html">
+<meta property="og:url" content="http://example.com/2024/07/23/Mysql/%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="单行注释 –多行注释 &#x2F;**&#x2F;SQL四种语言数据库(database xx language)DDL.DML.DQL.DCL定义,操作,查询,控制 &#x3D;&#x3D;DML（Data Manipulation Language）语句: 数据操纵语言，主要是对数据进行增加、删除、修改操作。常用的语句关键字有 INSERT、UPDATE、DELETE 等。&#x3D;&amp;#x3">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-12T09:35:31.321Z">
-<meta property="article:modified_time" content="2024-07-12T09:37:23.298Z">
+<meta property="article:published_time" content="2024-07-23T15:12:09.155Z">
+<meta property="article:modified_time" content="2024-07-25T19:56:12.807Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -205,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-12 17:35" pubdate>
-          2024年7月12日 下午
+        <time datetime="2024-07-23 23:12" pubdate>
+          2024年7月23日 晚上
         </time>
       </span>
     
@@ -217,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          811 字
         
       </span>
     
@@ -228,7 +230,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -270,7 +272,50 @@
             
               <div class="markdown-body">
                 
-                
+                <p>单行注释 –<br>多行注释 &#x2F;**&#x2F;<br>SQL四种语言<br>数据库(database xx language)<br><code>DDL.DML.DQL.DCL</code>定义,操作,查询,控制</p>
+<p>&#x3D;&#x3D;<em>DML（Data Manipulation Language）语句: <code>数据操纵语言</code>，主要是对数据进行增加、删除、修改操作。常用的语句关键字有 INSERT、UPDATE、DELETE 等。</em>&#x3D;&#x3D;</p>
+<p>如果有使用名相同 (user)          区别关键字用<code>user</code>  反引号</p>
+<p><strong>数据类型</strong>  &#96;数值,字符串,日期,null  </p>
+<h4 id="命令行操作表"><a href="#命令行操作表" class="headerlink" title="命令行操作表"></a>命令行操作表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> `teacher`(<br>id <span class="hljs-type">INT</span>(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>  AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;学号&#x27;</span>,<br>`name` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">40</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;匿名&#x27;</span> COMMENT <span class="hljs-string">&#x27;姓名&#x27;</span>,<br>`password` <span class="hljs-type">INT</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;123456&#x27;</span> COMMENT <span class="hljs-string">&#x27;密码&#x27;</span>,<br>`sex` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;男&#x27;</span> COMMENT <span class="hljs-string">&#x27;性别&#x27;</span>,<br>`birthday` DATETIME <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;生日&#x27;</span>,<br> `adress` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;地址&#x27;</span>,<br> `email`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;邮箱&#x27;</span>,<br> <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>)ENGINE<span class="hljs-operator">=</span>INNODB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4<br></code></pre></td></tr></table></figure>
+
+<h4 id="修改和删除表"><a href="#修改和删除表" class="headerlink" title="修改和删除表"></a>修改和删除表</h4><p>ALTER TABLE </p>
+<h3 id="DML的操作"><a href="#DML的操作" class="headerlink" title="DML的操作"></a>DML的操作</h3><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c">-- ================ 内置函数 ================<br>-- 数值函数<br><span class="hljs-built_in">abs</span>(x)            -- 绝对值 <span class="hljs-built_in">abs</span>(<span class="hljs-number">-10.9</span>) = <span class="hljs-number">10</span><br>format(x, d)    -- 格式化千分位数值 format(<span class="hljs-number">1234567.456</span>, <span class="hljs-number">2</span>) = <span class="hljs-number">1</span>,<span class="hljs-number">234</span>,<span class="hljs-number">567.46</span><br><span class="hljs-built_in">ceil</span>(x)            -- 向上取整 <span class="hljs-built_in">ceil</span>(<span class="hljs-number">10.1</span>) = <span class="hljs-number">11</span><br><span class="hljs-built_in">floor</span>(x)        -- 向下取整 <span class="hljs-built_in">floor</span> (<span class="hljs-number">10.1</span>) = <span class="hljs-number">10</span><br>round(x)        -- 四舍五入去整<br>mod(m, n)        -- m%n m mod n 求余 <span class="hljs-number">10</span>%<span class="hljs-number">3</span>=<span class="hljs-number">1</span><br>pi()            -- 获得圆周率<br><span class="hljs-built_in">pow</span>(m, n)        -- m^n<br><span class="hljs-built_in">sqrt</span>(x)            -- 算术平方根<br>rand()            -- 随机数<br>truncate(x, d)    -- 截取d位小数<br><br>-- 时间日期函数<br>now(), current_timestamp();     -- 当前日期时间<br>current_date();                    -- 当前日期<br>current_time();                    -- 当前时间<br>date(<span class="hljs-string">&#x27;yyyy-mm-dd hh:ii:ss&#x27;</span>);    -- 获取日期部分<br>time(<span class="hljs-string">&#x27;yyyy-mm-dd hh:ii:ss&#x27;</span>);    -- 获取时间部分<br>date_format(<span class="hljs-string">&#x27;yyyy-mm-dd hh:ii:ss&#x27;</span>, <span class="hljs-string">&#x27;%d %y %a %d %m %b %j&#x27;</span>);    -- 格式化时间<br>unix_timestamp();                -- 获得unix时间戳<br>from_unixtime();                -- 从时间戳获得时间<br><br>-- 字符串函数<br>length(<span class="hljs-built_in">string</span>)            -- <span class="hljs-built_in">string</span>长度，字节<br>char_length(<span class="hljs-built_in">string</span>)        -- <span class="hljs-built_in">string</span>的字符个数<br>substring(str, position [,length])        -- 从str的position开始,取length个字符<br>replace(str ,search_str ,replace_str)    -- 在str中用replace_str替换search_str<br><span class="hljs-title function_">instr</span><span class="hljs-params">(<span class="hljs-built_in">string</span> ,substring)</span>    -- 返回substring首次在<span class="hljs-built_in">string</span>中出现的位置<br><span class="hljs-title function_">concat</span><span class="hljs-params">(<span class="hljs-built_in">string</span> [,...])</span>    -- 连接字串<br><span class="hljs-title function_">charset</span><span class="hljs-params">(str)</span>            -- 返回字串字符集<br><span class="hljs-title function_">lcase</span><span class="hljs-params">(<span class="hljs-built_in">string</span>)</span>            -- 转换成小写<br><span class="hljs-title function_">left</span><span class="hljs-params">(<span class="hljs-built_in">string</span>, length)</span>    -- 从string2中的左边起取length个字符<br><span class="hljs-title function_">load_file</span><span class="hljs-params">(file_name)</span>    -- 从文件读取内容<br><span class="hljs-title function_">locate</span><span class="hljs-params">(substring, <span class="hljs-built_in">string</span> [,start_position])</span>    -- 同instr,但可指定开始位置<br><span class="hljs-title function_">lpad</span><span class="hljs-params">(<span class="hljs-built_in">string</span>, length, pad)</span>    -- 重复用pad加在<span class="hljs-built_in">string</span>开头,直到字串长度为length<br><span class="hljs-title function_">ltrim</span><span class="hljs-params">(<span class="hljs-built_in">string</span>)</span>            -- 去除前端空格<br><span class="hljs-title function_">repeat</span><span class="hljs-params">(<span class="hljs-built_in">string</span>, count)</span>    -- 重复count次<br><span class="hljs-title function_">rpad</span><span class="hljs-params">(<span class="hljs-built_in">string</span>, length, pad)</span>    --在str后用pad补充,直到长度为length<br><span class="hljs-title function_">rtrim</span><span class="hljs-params">(<span class="hljs-built_in">string</span>)</span>            -- 去除后端空格<br><span class="hljs-title function_">strcmp</span><span class="hljs-params">(string1 ,string2)</span>    -- 逐字符比较两字串大小<br><br>-- 聚合函数<br><span class="hljs-title function_">count</span><span class="hljs-params">()</span><br><span class="hljs-title function_">sum</span><span class="hljs-params">()</span>;<br>max();<br>min();<br>avg();<br>group_concat()<br><br>-- 其他常用函数<br>md5();<br><span class="hljs-keyword">default</span>();<br><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c">-- 使用<span class="hljs-built_in">set</span>语句来改变自动提交模式<br>SET autocommit = <span class="hljs-number">0</span>;   <span class="hljs-comment">/*关闭*/</span><br>SET autocommit = <span class="hljs-number">1</span>;   <span class="hljs-comment">/*开启*/</span><br><br>-- 注意:<br>-- <span class="hljs-number">1.</span>MySQL中默认是自动提交<br>-- <span class="hljs-number">2.</span>使用事务时应先关闭自动提交<br><br>SET autocommit =<span class="hljs-number">0</span>    -- 关闭自动提交<br><br>-- 开始一个事务,标记事务的起始点<br>START TRANSACTION   -- 标记一个事务的开始,从这个之后的sq1都在同一个事务内<br><br>-- 提交一个事务给数据库<br>COMMIT<br><br>-- 将事务回滚,数据回到本次事务的初始状态<br>ROLLBACK<br><br>-- 还原MySQL数据库的自动提交<br>SET autocommit =<span class="hljs-number">1</span>;<br><br>-- 保存点<br>SAVEPOINT 保存点名称 -- 设置一个事务保存点<br>ROLLBACK TO SAVEPOINT 保存点名称 -- 回滚到保存点<br>RELEASE SAVEPOINT 保存点名称 -- 删除保存点<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/54chensongxia/p/13941662.html">MySQL 学习笔记 - 程序员自由之路 - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45851945/article/details/114287877?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172175122616800227474411%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172175122616800227474411&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-114287877-null-null.142%5Ev100%5Epc_search_result_base7&utm_term=mysql&spm=1018.2226.3001.4187">MySQL 有这一篇就够（呕心狂敲37k字，只为博君一点赞！！！）_mysql有这一篇幅就够了-CSDN博客</a></p>
+
                 
               </div>
             
@@ -288,7 +333,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2024/07/12/操作快捷键/markdown/</div>
+      <div>http://example.com/2024/07/23/Mysql/操作/</div>
     </div>
     <div class="license-meta">
       
@@ -300,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月12日</div>
+          <div>2024年7月23日</div>
         </div>
       
       
@@ -332,18 +377,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/23/Mysql/%E6%93%8D%E4%BD%9C/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/07/java/index/" title="java">
-                        <span class="hidden-mobile">java</span>
+                      <a href="/2024/07/12/%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE/markdown/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
